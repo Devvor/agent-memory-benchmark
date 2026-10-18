@@ -17,7 +17,7 @@ We benchmarked three memory strategies on the same 50 personas, same questions, 
 - Curation matched raw context at p = 0.66 — **zero quality loss for a ~30× token reduction per question** (1.3k vs 43k input tokens), but the real argument over raw context is cost/latency at deployment scale, not accuracy.
 - Their pipeline burned ~26 LLM extraction passes per persona to build its store; the curation arm uses exactly one. Ironically, the memory system's *build cost* was ~80% of this entire benchmark's API bill.
 
-Full numbers with per-arm token/cost accounting: [`RESULTS50.json`](RESULTS50.json). Per-arm answer logs are in the harness output files (see Reproduce).
+Full numbers with per-arm token/cost accounting: [`RESULTS50.json`](RESULTS50.json). The memory design behind arm B is documented in [`MEMORY_DESIGN.md`](MEMORY_DESIGN.md). Per-arm answer logs are in the harness output files (see Reproduce).
 
 ## Methodology
 
