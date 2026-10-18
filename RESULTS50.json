@@ -1,0 +1,52 @@
+{
+ "armA_raw_context": {
+  "n": 50,
+  "errors": 0,
+  "ok": 37,
+  "acc": 0.74,
+  "ci95": [
+   0.604,
+   0.841
+  ],
+  "unparseable": 0,
+  "cost_usd": 0.2639,
+  "ptokens": 2146759,
+  "ctokens": 138794
+ },
+ "armB_curated": {
+  "n": 50,
+  "errors": 0,
+  "ok": 35,
+  "acc": 0.7,
+  "ci95": [
+   0.562,
+   0.809
+  ],
+  "unparseable": 0,
+  "cost_usd": 1.9019,
+  "ptokens": 64065,
+  "ctokens": 23937
+ },
+ "armC_tencentdb": {
+  "n": 50,
+  "errors": 0,
+  "ok": 20,
+  "acc": 0.4,
+  "ci95": [
+   0.276,
+   0.538
+  ],
+  "unparseable": 0,
+  "cost_usd": 0.0349,
+  "ptokens": 93643,
+  "ctokens": 61129
+ },
+ "methodology": {
+  "dataset": "PersonaMem-v2 (bowen-upenn, HuggingFace), benchmark/text/benchmark.csv",
+  "selection": "50 unique personas, one query row each, deterministic sample seed 20261017",
+  "answer_model": "z-ai/glm-5.3-flash, max_tokens=2048 (fixes content=None reasoning starvation; thinking-disable params ignored by API)",
+  "extract_model": "z-ai/glm-5.3 (arm B curation pass; arm C TencentDB pipeline LLM)",
+  "tencentdb": "npm @tencentdb-agent-memory/memory-tencentdb, standalone gateway, bm25+bge-m3 embeddings, same extract model as arm B",
+  "run_date": "2026-10-17/18"
+ }
+}

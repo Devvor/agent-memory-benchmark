@@ -1,0 +1,11 @@
+data/
+hist50/
+tdai-data50/
+seeds50/
+logs/
+*.jsonl
+.nous_key
+*.log
+armC50_recall.jsonl
+node_modules/
+__pycache__/
